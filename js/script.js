@@ -67,7 +67,7 @@ const myChart = new Chart(ctx, {
 });
 
 function redrawChart() {
-　　var p_pre = document.getElementById('inputValue');
+var p_pre = document.getElementById('inputValue');
 var a_pre = document.getElementById('inputValue2');
 var c_pre = document.getElementById('inputValue3');
 var p_val = p_pre.value;
@@ -109,6 +109,19 @@ for (let i = 1; i <= 50; i++) {
   }
   cor_list.push(cor);
 }
-    chart.data.datasets[0].data = cor_list;
-    chart.update();
+    const myChart = new Chart(ctx, {
+  type: "line",
+  data: {
+    labels: Array.from({ length: 50 }, (_, i) => i + 1),
+    datasets: [
+      {
+        label: "correct rate",
+        data: cor_list,
+        borderColor: "rgba(255, 99, 132, 1)",
+        borderWidth: 1,
+      },
+    ],
+  },
+});
+    myChart.update();
 }
