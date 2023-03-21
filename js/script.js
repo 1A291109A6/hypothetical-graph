@@ -67,8 +67,7 @@ const myChart = new Chart(ctx, {
 });
 
 function redrawChart() {
-  var chart = document.getElementById('myChart'); // グラフオブジェクトの取得
-  var p_pre = document.getElementById('inputValue');
+　　var p_pre = document.getElementById('inputValue');
 var a_pre = document.getElementById('inputValue2');
 var c_pre = document.getElementById('inputValue3');
 var p_val = p_pre.value;
@@ -110,5 +109,6 @@ for (let i = 1; i <= 50; i++) {
   }
   cor_list.push(cor);
 }
-  myChart.update(); // グラフの再描画
+    chart.data.datasets[0].data = cor_list;
+    chart.update();
 }
