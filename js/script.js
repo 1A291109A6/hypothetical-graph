@@ -109,19 +109,6 @@ for (let i = 1; i <= 50; i++) {
   }
   cor_list.push(cor);
 }
-    const myChart = new Chart(ctx, {
-  type: "line",
-  data: {
-    labels: Array.from({ length: 50 }, (_, i) => i + 1),
-    datasets: [
-      {
-        label: "correct rate",
-        data: cor_list,
-        borderColor: "rgba(255, 99, 132, 1)",
-        borderWidth: 1,
-      },
-    ],
-  },
-});
+    myChart.data.datasets[0].data = cor_list;
     myChart.update();
 }
