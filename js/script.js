@@ -110,5 +110,5 @@ for (let i = 1; i <= 50; i++) {
   }
   cor_list.push(cor);
 }
-  chart.update(); // グラフの再描画
+  myChart.update(); // グラフの再描画
 }
